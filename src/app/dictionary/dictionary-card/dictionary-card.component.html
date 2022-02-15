@@ -1,0 +1,116 @@
+<ion-grid [hidden]="!item.hidden" [class.highlighted]="'dictionary-' + this.item.id === this.referenceId">
+  <ion-row class="justify-center">
+
+    <ion-col
+      *ngIf="hasTopic(Topics.Photogrammetry) && selectedTopics[0]"
+      [size]="12 / numberOfTopics">
+
+      <ion-card (click)="toggleShrink(item)">
+
+        <ion-card-header class="ion-margin-bottom" style="background-color: var(--photogrammetry-color);">
+          <ion-img class="header__icon" src="../assets/icon/iconPhotogrammetry.png" *ngIf="!item.shrink"></ion-img>
+          <br>
+          <h2>{{item.language[0].photogrammetry[0].title}}</h2>
+          <!-- <ion-card-subtitle class="card-subtitle" >This is a random subtitle</ion-card-subtitle> -->
+
+        </ion-card-header>
+
+        <ion-card-content *ngIf="!item.shrink">
+          <div *ngIf="(mainTopic === 'photogrammetry' || !item.shrink) && item.language[0].photogrammetry[0].definition !== undefined">
+            <p class="dictionary__card__content--text">
+              {{item.language[0].photogrammetry[0].definition}}
+            </p>
+            <div>
+              <ul class="dictionary__card__content--link dictionary-card__reference-list">
+                <li *ngIf="item.language[0].photogrammetry[0].resourceReference !== ''">
+                  <a [routerLink]="['/resources/resource-'+item.language[0].photogrammetry[0].resourceReference]"
+                     class="dictionary-card__reference">See in Resources</a>
+                </li>
+                <li *ngIf="!item.shrink && item.language[0].photogrammetry[0].externalLink !== ''">
+                  <a [href]="item.language[0].photogrammetry[0].externalLink">External Link</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </ion-card-content>
+
+      </ion-card>
+
+    </ion-col>
+
+    <ion-col
+      *ngIf="hasTopic(Topics.ComputerVision) && selectedTopics[1]"
+      [size]="12/numberOfTopics">
+
+      <ion-card (click)="toggleShrink(item)">
+
+        <ion-card-header class="ion-margin-bottom" style="background-color: var(--computervision-color)" [class.dictionary-card__header--gradient]="item.language[0].roMerge === 'TRUE'">
+          <ion-img class="header__icon" src="../assets/icon/iconCV.png" *ngIf="!item.shrink"></ion-img>
+          <ion-img class="header__icon" src="../assets/icon/iconRobotics.png" *ngIf="!item.shrink && item.language[0].roMerge === 'TRUE'"></ion-img>
+          <br>
+          <h2>{{item.language[0].computer_vision[0].title}}</h2>
+
+          <!-- <ion-card-subtitle class="card-subtitle" >This is a random subtitle</ion-card-subtitle> -->
+        </ion-card-header>
+
+        <ion-card-content *ngIf="!item.shrink">
+          <div *ngIf="(mainTopic === 'computer_vision' || !item.shrink) && item.language[0].computer_vision[0].definition !== undefined">
+            <p class="dictionary__card__content--text">
+              {{item.language[0].computer_vision[0].definition}}
+            </p>
+            <div>
+              <ul class="dictionary__card__content--link dictionary-card__reference-list">
+                <li *ngIf="item.language[0].computer_vision[0].resourceReference !== ''">
+                  <a [routerLink]="['/resources/resource-'+item.language[0].computer_vision[0].resourceReference]"
+                     class="dictionary-card__reference">See in Resources</a>
+                </li>
+                <li *ngIf="!item.shrink && item.language[0].computer_vision[0].externalLink !== ''">
+                  <a [href]="item.language[0].computer_vision[0].externalLink">External Link</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-col>
+
+    <ion-col
+      *ngIf="hasTopic(Topics.Robotics) && selectedTopics[2]"
+      [size]="12/numberOfTopics">
+
+      <ion-card (click)="toggleShrink(item)">
+
+        <ion-card-header class="ion-margin-bottom" style="background-color: var(--robotics-color);">
+          <ion-img class="header__icon" src="../assets/icon/iconRobotics.png" *ngIf="!item.shrink"></ion-img>
+          <br>
+          <h2>{{item.language[0].robotics[0].title}}</h2>
+
+          <!-- <ion-card-subtitle class="card-subtitle" >This is a random subtitle</ion-card-subtitle> -->
+        </ion-card-header>
+
+        <ion-card-content *ngIf="!item.shrink">
+          <div *ngIf="(mainTopic === 'robotics' || !item.shrink) && item.language[0].robotics[0].definition !== undefined">
+            <p class="dictionary__card__content--text">
+              {{item.language[0].robotics[0].definition}}
+            </p>
+            <div>
+              <ul class="dictionary__card__content--link dictionary-card__reference-list">
+                <li *ngIf="item.language[0].robotics[0].resourceReference !== ''">
+                  <a [routerLink]="['/resources/resource-'+item.language[0].robotics[0].resourceReference]"
+                     class="dictionary-card__reference">See in Resources</a>
+                </li>
+                <li *ngIf="!item.shrink && item.language[0].robotics[0].externalLink !== ''">
+                  <a [href]="item.language[0].robotics[0].externalLink">External Link</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-col>
+
+  </ion-row>
+</ion-grid>

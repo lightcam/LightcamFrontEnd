@@ -1,0 +1,105 @@
+:host {
+
+  margin-top: 24px;
+  display: block;
+  background-color: #b0bec5;
+  border-top: 1px solid grey;
+}
+
+.container {
+  height: 180px;
+  padding: 8px
+}
+
+:host div {
+
+  margin: 8px
+}
+
+ul {
+
+  margin-top: 0;
+}
+
+//div:not(.logo) {
+//
+//  flex: 1 1 0px;
+//}
+
+div.logo {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+}
+
+div.logo ion-img {
+
+  height: 100px;
+  width: 100px;
+}
+
+div.logo p {
+
+  font-size: 0.8em;
+}
+
+.footer__central-text{
+  font-size: 0.9rem;
+  flex: 5;
+}
+
+@media screen and (max-width: 1200px){
+  .footer__central-text{
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 900px){
+  .footer__central-text{
+    font-size: 0.6rem;
+  }
+}
+
+.footer__right-text{
+  flex: 2;
+  font-size: 0.9rem;
+}
+
+.footer__legal-links{
+  margin: 0;
+  padding: 0;
+  gap: 5px;
+}
+
+.center-txt{
+  text-align: center;
+}
+
+// Flexbox stuff down here
+
+.flex-col{
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-around;
+  align-items: flex-start;
+}
+
+.flex-1{
+  flex: 1;
+}
+
+.flex-5{
+  flex: 5;
+}
+
+.flex-row{
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+  align-items: flex-start;
+}
+
+

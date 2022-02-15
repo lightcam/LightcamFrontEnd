@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "lightcam-prototype",
+    "public": "www",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

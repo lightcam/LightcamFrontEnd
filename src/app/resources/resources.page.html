@@ -1,0 +1,37 @@
+<ion-header *ngIf="platform.is('mobile')">
+  <ion-toolbar>
+    <ion-title>External Resources</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Mockup of page layout -->
+
+  <!-- Could be a series of cards or an ion-list -->
+  <section>
+    <app-banner-heading></app-banner-heading>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="8" offset-md="2">
+          <ion-searchbar showCancelButton="focus" (ionChange)="filterOnSearch()" [(ngModel)]="searchBarContent"></ion-searchbar>
+          <div *ngFor="let resource of resources">
+            <ion-card *ngIf="resource.display===true" [id]="'resource-'+resource.id" [class.highlighted]="referenceId.indexOf(resource.id)>-1">
+              <ion-card-header >
+                <ion-card-title>{{resource.words[0].title}}</ion-card-title>
+                <ion-card-subtitle>
+                  {{resource.words[0].description}}
+                  <span class="relatedLink" *ngIf='resource.words[0].link !== undefined && resource.words[0].link !== ""'>
+                  <a [href]="resource.words[0].link">External link</a>
+                </span>
+                </ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+
+  <app-banner-footer></app-banner-footer>
+
+</ion-content>

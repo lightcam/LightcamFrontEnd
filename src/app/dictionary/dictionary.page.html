@@ -1,0 +1,123 @@
+<ion-header *ngIf="platform.is('mobile')">
+  <ion-toolbar>
+    <ion-title>Dictionary</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section>
+    <app-banner-heading></app-banner-heading>
+    <ion-grid><ion-row><ion-col
+      size-md="8" offset-md="2">
+
+      <ion-card>
+        <ion-card-header>
+  <!--        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>-->
+          <ion-card-title class="centered dictionary__title">Dictionary</ion-card-title>
+          <div class="global__page--description--txt">The dictionary contains overlapping or differing definitions and concepts between the three disciplines. Often there is a perfect overlap between CV and robotics, while sometimes the terminology in relation to photogrammetry may be different.</div>
+<!--          <a [routerLink]="['/resources/resource-9']">Click here to test routing</a>-->
+        </ion-card-header>
+
+        <ion-card-content>
+          <p class="leader">
+            <ion-list class="topic-selector">
+              <ion-item>
+                <ion-label style="color: var(--photogrammetry-color);">Photogrammetry</ion-label>
+                <ion-toggle (ionChange)="changeTopicsEvent($event, 0)" slot="end" checked style="--background-checked: var(--photogrammetry-color);"></ion-toggle>
+              </ion-item>
+              <ion-item>
+                <ion-label style="color: var(--computervision-color);">Computer Vision</ion-label>
+                <ion-toggle (ionChange)="changeTopicsEvent($event, 1)" slot="end" checked style="--background-checked: var(--computervision-color);"></ion-toggle>
+              </ion-item>
+              <ion-item>
+                <ion-label style="color: var(--robotics-color);">Robotics</ion-label>
+                <ion-toggle (ionChange)="changeTopicsEvent($event, 2)" slot="end" checked style="--background-checked: var(--robotics-color);"></ion-toggle>
+              </ion-item>
+            </ion-list>
+          </p>
+<!--          <div class="centered topics">-->
+<!--            <span class="global__photogrammetry&#45;&#45;color">Photogrammetry</span> - -->
+<!--            <span class="global__computervision&#45;&#45;color">Computer Vision</span> - -->
+<!--            <span class="global__robotics&#45;&#45;color">Robotics</span>-->
+<!--          </div>-->
+          <hr>
+        </ion-card-content>
+
+      </ion-card>
+      <ion-searchbar showCancelButton="focus" (ionChange)="filterOnSearch()" [(ngModel)]="searchBarContent"></ion-searchbar>
+
+
+      <!-- TEMPLATE CONTENT OVER HERE   -->
+
+      <ng-container *ngIf="csvCards && csvCards.length > 0">
+
+      <app-dictionary-card
+        *ngFor="let item of csvCards"
+        [item]="item"
+        [referenceId]="referenceId"
+        [id]="'dictionary-'+item.id"
+        [selectedTopics]="selectedTopics"
+      >
+      </app-dictionary-card>
+
+      </ng-container>
+
+
+
+
+      <!--  LEGACY STUFF OVER HERE  -->
+  <!--
+      <ion-card (click)="toggleShrink(item)" *ngFor= "let item of csvCards">
+        <ion-card-header>
+          <ion-card-subtitle class="card-subtitle" >{{item.language[0].subtitle}}</ion-card-subtitle>
+          <ion-card-title class="card-title">
+            <span class="global__photogrammetry--color">
+              {{item.language[0].photogrammetry[0].hasOwnProperty('title') ? ' - ' + item.language[0].photogrammetry[0].title: ''}}
+            </span>
+            <span class="global__computervision--color">
+              {{item.language[0].computer_vision[0].hasOwnProperty('title') ? ' - ' + item.language[0].computer_vision[0].title: ''}}
+            </span>
+            <span class="global__robotics--color">
+              {{item.language[0].robotics[0].hasOwnProperty('title') ? ' - ' + item.language[0].robotics[0].title : ''}}
+            </span>
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <p class="global__photogrammetry--color" *ngIf="(mainTopic === 'photogrammetry' || item.shrink) && item.language[0].photogrammetry[0].definition !== undefined">
+            <span class="dictionary__card__content--title">{{item.language[0].photogrammetry[0].title}}</span>
+            <span class="dictionary__card__content--text">{{item.language[0].photogrammetry[0].definition}}</span>
+            <span class="dictionary__card__content--link" *ngIf="item.shrink && item.language[0].photogrammetry[0].externalLink !== ''">
+              More info: <span><a [href]="item.language[0].photogrammetry[0].externalLink">{{item.language[0].photogrammetry[0].externalLink}}</a></span>
+            </span>
+
+          </p>
+          <p class="global__computervision--color" *ngIf="(mainTopic === 'computerVision' || item.shrink) && item.language[0].computer_vision[0].definition !== undefined">
+            <span class="dictionary__card__content--title">{{item.language[0].computer_vision[0].title}}</span>
+            <span class="dictionary__card__content--text">{{item.language[0].computer_vision[0].definition}}</span>
+            <span class="dictionary__card__content--link" *ngIf="item.shrink && item.language[0].computer_vision[0].externalLink !== ''">
+              More info: <span><a [href]="item.language[0].computer_vision[0].externalLink">{{item.language[0].computer_vision[0].externalLink}}</a></span>
+            </span>
+          </p>
+          <p class="global__robotics--color" *ngIf="(mainTopic === 'robotics' || item.shrink) && item.language[0].robotics[0].definition !== undefined">
+            <span class="dictionary__card__content--title">{{item.language[0].robotics[0].title}}</span>
+            <span class="dictionary__card__content--text">{{item.language[0].robotics[0].definition}}</span>
+            <span class="dictionary__card__content--link" *ngIf="item.shrink && item.language[0].robotics[0].externalLink !== ''">
+              More info: <span><a [href]="item.language[0].robotics[0].externalLink">{{item.language[0].robotics[0].externalLink}}</a></span>
+            </span>
+          </p>
+  -->
+  <!--        <p class="dictionary__card__content&#45;&#45;link" *ngIf="opened[item.id]">-->
+  <!--          <a *ngFor="let link of item.language[0].external_links[0].link" [href]="link">{{link}}</a>-->
+  <!--        </p>-->
+  <!--
+        </ion-card-content>
+
+      </ion-card>
+  -->
+  </ion-col></ion-row></ion-grid>
+  </section>
+
+  <app-banner-footer></app-banner-footer>
+
+</ion-content>

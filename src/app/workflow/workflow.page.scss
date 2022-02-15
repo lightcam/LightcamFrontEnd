@@ -1,0 +1,35 @@
+ion-card-title {
+
+  text-align: center;
+  font-size: 2.5rem;
+  padding-bottom: 15px;
+}
+
+svg{
+  width: 60vw;
+  //height: 125vh;
+  margin-top: 10px;
+  padding-top: 2vh;
+  background-color: transparent;
+  overflow: visible;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 1000px){
+  svg{
+    width: 80vw;
+  }
+}
+
+section {
+  background-image: var(--background-gradient);
+}
+
+.tmp-workflow{
+  margin-top: 30px;
+  transform: translateX(-50%);
+  left: 50%;
+  position: relative;
+}

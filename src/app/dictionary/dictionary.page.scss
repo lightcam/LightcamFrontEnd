@@ -1,0 +1,96 @@
+ion-card{
+  cursor: pointer;
+}
+
+.dictionary__robotics--color{
+  color: #FF3D00;
+}
+
+.dictionary__computervision--color{
+  color: #76FF03;
+}
+
+.dictionary__photogrammetry--color{
+  color: #00B0FF;
+}
+
+ion-img{
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+}
+
+.dictionary__header--image{
+  object-fit: fill;
+  width: 100%;
+  overflow: hidden;
+}
+.centered{
+  text-align: center;
+  font-size: 1.5rem;
+}
+.dictionary__title{
+  font-size: 2.5rem;
+}
+
+.card-title{
+  font-size: 1.3rem;
+  margin-bottom: -10px;
+}
+
+.card-subtitle{
+  padding-top: 10px;
+}
+
+ion-card{
+  p{
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+.dictionary__card__content--title{
+  font-weight: bold;
+  display: block;
+}
+
+.dictionary__card__content--link{
+  display: block;
+  font-style: italic;
+  a {
+    color: inherit;
+  }
+}
+
+.grid__wrapper{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid__wrapper2{
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.grid__wrapper3{
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.topics{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+section{
+  background-image: var(--background-gradient);
+}
+
+p.leader {
+  text-align: center;
+  max-width: 90%;
+  margin: auto;
+  margin-bottom: 45px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  //text-shadow: 2px 2px gray;
+}

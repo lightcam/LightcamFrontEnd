@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Timeline[
+  <!ELEMENT Timeline (event)*>
+  <!ELEMENT event (date, language+)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT language (title, subtitle?, description?, computer_vision, robotics, photogrammetry)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT subtitle (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT computer_vision (paragraph_title*, paragraph*, external_links?, images?)>
+  <!ELEMENT robotics (paragraph_title*, paragraph*, external_links?, images?)>
+  <!ELEMENT photogrammetry (paragraph_title*, paragraph*, external_links?, images?)>
+  <!ELEMENT images (img*)>
+  <!ELEMENT img (#PCDATA)>
+  <!ELEMENT external_links (link*)>
+  <!ELEMENT link (#PCDATA)>
+  <!ELEMENT paragraph (paragraph_title?, paragraph_content)>
+  <!ELEMENT paragraph_title (#PCDATA)>
+  <!ELEMENT paragraph_content (#PCDATA)>
+
+  <!ATTLIST language
+    country CDATA #REQUIRED>
+  <!ATTLIST img
+    pos CDATA #REQUIRED>
+  <!ATTLIST link
+    language CDATA #IMPLIED>
+  <!ATTLIST paragraph
+    pos CDATA #IMPLIED>
+  <!ATTLIST date
+    type CDATA #IMPLIED>
+  <!ATTLIST date
+    range CDATA #IMPLIED>
+  ]>
+
+
+
+<Timeline>
+
+  <event> <!--  Historical event   -->
+    <date type="Roman" range="true">XVII-XVIII BC</date> <!--  yyyy/mm/dd  -->
+
+    <language country="IT">
+      <!-- Italian content (IT) -->
+      <title>Event title</title>
+      <subtitle>Event subtitle (optional)</subtitle>
+      <description>Short event description (optional)</description>
+      <computer_vision>
+        <!--  Information related to computer vision  -->
+        <paragraph>
+          <!--  Every paragraph should have a title and a content  -->
+          <paragraph_title>First Paragraph</paragraph_title>
+          <paragraph_content>
+            P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <paragraph pos="0">
+          <!--  You can also use "pos" attribute to specify the location  -->
+          <paragraph_title>Second Paragraph</paragraph_title>
+          <paragraph_content>
+            P2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <external_links>
+          <link language="IT">
+            google.it
+          </link>
+          <link>www.lipsum.com</link>
+        </external_links>
+        <images>
+          <!--  Image position could be specified by "pos" attribute  -->
+          <img pos="0">ImageName.png</img>
+          <img pos="1">ImageName.jpg</img>
+        </images>
+      </computer_vision>
+      <robotics>
+        <!--  Information related to robotics  -->
+        <paragraph>
+          <paragraph_title>First paragraph</paragraph_title>
+          <paragraph_content>
+            P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <external_links>
+          <link language="IT">
+            google.it
+          </link>
+          <link>www.lipsum.com</link>
+        </external_links>
+        <images>
+          <!--  Image position could be specified by "pos" attribute  -->
+          <img pos="0">ImageName.jpg</img>
+          <img pos="1">ImageName.png</img>
+        </images>
+      </robotics>
+      <photogrammetry>
+        <!--  Information related to computer vision  -->
+        <paragraph>
+          <!--  Every paragraph should have a title and a content  -->
+          <paragraph_title>First Paragraph</paragraph_title>
+          <paragraph_content>
+            P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <paragraph pos="0">
+          <!--  You can also use "pos" attribute to specify the location  -->
+          <paragraph_title>Second Paragraph</paragraph_title>
+          <paragraph_content>
+            P2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <external_links>
+          <link language="IT">
+            google.it
+          </link>
+          <link>www.lipsum.com</link>
+        </external_links>
+        <images>
+          <!--  Image position could be specified by "pos" attribute  -->
+          <img pos="0">ImageName.png</img>
+          <img pos="1">ImageName.jpg</img>
+        </images>
+      </photogrammetry>
+    </language>
+
+    <language country="EN">
+      <!-- English content (EN) -->
+      <title>Event title</title>
+      <subtitle>Event subtitle (optional)</subtitle>
+      <description>Short event description (optional)</description>
+      <computer_vision>
+        <!--  Information related to computer vision  -->
+        <paragraph>
+          <!--  Every paragraph should have a title and a content  -->
+          <paragraph_title>First Paragraph</paragraph_title>
+          <paragraph_content>
+            P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <paragraph pos="0">
+          <!--  You can also use "pos" attribute to specify the location  -->
+          <paragraph_title>Second Paragraph</paragraph_title>
+          <paragraph_content>
+            P2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <external_links>
+          <link language="EN">
+            google.it
+          </link>
+          <link>www.lipsum.com</link>
+        </external_links>
+        <images>
+          <!--  Image position could be specified by "pos" attribute  -->
+          <img pos="0">ImageName.png</img>
+          <img pos="1">ImageName.jpg</img>
+        </images>
+      </computer_vision>
+      <robotics>
+        <!--  Information related to robotics  -->
+        <paragraph>
+          <paragraph_title>First paragraph</paragraph_title>
+          <paragraph_content>
+            P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <external_links>
+          <link language="EN">
+            google.it
+          </link>
+          <link>www.lipsum.com</link>
+        </external_links>
+        <images>
+          <!--  Image position could be specified by "pos" attribute  -->
+          <img pos="0">ImageName.png</img>
+          <img pos="1">ImageName.jpg</img>
+        </images>
+      </robotics>
+      <photogrammetry>
+        <!--  Same structure above, it could also be empty  -->
+      </photogrammetry>
+    </language>
+  </event>
+
+  <event> <!--  Historical event   -->
+    <date range="true">2001-2002 BC</date> <!--  yyyy/mm/dd  -->
+
+    <language country="IT">
+      <!-- Italian content (IT) -->
+      <title>Event title 2</title>
+      <subtitle>Event subtitle (optional)</subtitle>
+      <description>Short event description (optional)</description>
+      <computer_vision>
+        <!--  Information related to computer vision  -->
+        <paragraph>
+          <!--  Every paragraph should have a title and a content  -->
+          <paragraph_title>First Paragraph</paragraph_title>
+          <paragraph_content>
+            P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <paragraph pos="0">
+          <!--  You can also use "pos" attribute to specify the location  -->
+          <paragraph_title>Second Paragraph</paragraph_title>
+          <paragraph_content>
+            P2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <external_links>
+          <link language="IT">
+            google.it
+          </link>
+          <link>www.lipsum.com</link>
+        </external_links>
+        <images>
+          <!--  Image position could be specified by "pos" attribute  -->
+          <img pos="0">ImageName.png</img>
+          <img pos="1">ImageName.jpg</img>
+        </images>
+      </computer_vision>
+      <robotics>
+        <!--  Information related to robotics  -->
+        <paragraph>
+          <paragraph_title>First paragraph</paragraph_title>
+          <paragraph_content>
+            P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <external_links>
+          <link language="IT">
+            google.it
+          </link>
+          <link>www.lipsum.com</link>
+        </external_links>
+        <images>
+          <!--  Image position could be specified by "pos" attribute  -->
+          <img pos="0">ImageName.jpg</img>
+          <img pos="1">ImageName.png</img>
+        </images>
+      </robotics>
+      <photogrammetry>
+        <!--  Same structure above, it could also be empty  -->
+      </photogrammetry>
+    </language>
+
+    <language country="EN">
+      <!-- English content (EN) -->
+      <title>Event title 2</title>
+      <subtitle>Event subtitle (optional)</subtitle>
+      <description>Short event description (optional)</description>
+      <computer_vision>
+        <!--  Information related to computer vision  -->
+        <paragraph>
+          <!--  Every paragraph should have a title and a content  -->
+          <paragraph_title>First Paragraph</paragraph_title>
+          <paragraph_content>
+            P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <paragraph pos="0">
+          <!--  You can also use "pos" attribute to specify the location  -->
+          <paragraph_title>Second Paragraph</paragraph_title>
+          <paragraph_content>
+            P2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <external_links>
+          <link language="EN">
+            google.it
+          </link>
+          <link>www.lipsum.com</link>
+        </external_links>
+        <images>
+          <!--  Image position could be specified by "pos" attribute  -->
+          <img pos="0">ImageName.png</img>
+          <img pos="1">ImageName.jpg</img>
+        </images>
+      </computer_vision>
+      <robotics>
+        <!--  Information related to robotics  -->
+        <paragraph>
+          <paragraph_title>First paragraph</paragraph_title>
+          <paragraph_content>
+            P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <external_links>
+          <link language="EN">
+            google.it
+          </link>
+          <link>www.lipsum.com</link>
+        </external_links>
+        <images>
+          <!--  Image position could be specified by "pos" attribute  -->
+          <img pos="0">ImageName.png</img>
+          <img pos="1">ImageName.jpg</img>
+        </images>
+      </robotics>
+      <photogrammetry>
+        <!--  Same structure above, it could also be empty  -->
+      </photogrammetry>
+    </language>
+  </event>
+
+  <event> <!--  Historical event   -->
+    <date>2000/12/14</date> <!--  yyyy/mm/dd  -->
+
+    <language country="IT">
+      <!-- Italian content (IT) -->
+      <title>Event title 2</title>
+      <subtitle>Event subtitle (optional)</subtitle>
+      <description>Short event description (optional)</description>
+      <computer_vision>
+        <!--  Information related to computer vision  -->
+        <paragraph>
+          <!--  Every paragraph should have a title and a content  -->
+          <paragraph_title>First Paragraph</paragraph_title>
+          <paragraph_content>
+            P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <paragraph pos="0">
+          <!--  You can also use "pos" attribute to specify the location  -->
+          <paragraph_title>Second Paragraph</paragraph_title>
+          <paragraph_content>
+            P2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <external_links>
+          <link language="IT">
+            google.it
+          </link>
+          <link>www.lipsum.com</link>
+        </external_links>
+        <images>
+          <!--  Image position could be specified by "pos" attribute  -->
+          <img pos="0">ImageName.png</img>
+          <img pos="1">ImageName.jpg</img>
+        </images>
+      </computer_vision>
+      <robotics>
+
+      </robotics>
+      <photogrammetry>
+        <!--  Same structure above, it could also be empty  -->
+      </photogrammetry>
+    </language>
+
+    <language country="EN">
+      <!-- English content (EN) -->
+      <title>Event title 2</title>
+      <subtitle>Event subtitle (optional)</subtitle>
+      <description>Short event description (optional)</description>
+      <computer_vision>
+        <!--  Information related to computer vision  -->
+        <paragraph>
+          <!--  Every paragraph should have a title and a content  -->
+          <paragraph_title>First Paragraph</paragraph_title>
+          <paragraph_content>
+            P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <paragraph pos="0">
+          <!--  You can also use "pos" attribute to specify the location  -->
+          <paragraph_title>Second Paragraph</paragraph_title>
+          <paragraph_content>
+            P2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <external_links>
+          <link language="EN">
+            google.it
+          </link>
+          <link>www.lipsum.com</link>
+        </external_links>
+        <images>
+          <!--  Image position could be specified by "pos" attribute  -->
+          <img pos="0">ImageName.png</img>
+          <img pos="1">ImageName.jpg</img>
+        </images>
+      </computer_vision>
+      <robotics>
+        <!--  Information related to robotics  -->
+        <paragraph>
+          <paragraph_title>First paragraph</paragraph_title>
+          <paragraph_content>
+            P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </paragraph_content>
+        </paragraph>
+        <external_links>
+          <link language="EN">
+            google.it
+          </link>
+          <link>www.lipsum.com</link>
+        </external_links>
+        <images>
+          <!--  Image position could be specified by "pos" attribute  -->
+          <img pos="0">ImageName.png</img>
+          <img pos="1">ImageName.jpg</img>
+        </images>
+      </robotics>
+      <photogrammetry>
+        <!--  Same structure above, it could also be empty  -->
+      </photogrammetry>
+    </language>
+  </event>
+  <!--  Add more events below  -->
+
+
+
+</Timeline>

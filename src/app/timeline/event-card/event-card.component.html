@@ -1,0 +1,43 @@
+<div class="head" [ngStyle]="{ 'background-color': cardButtonsBackground }">
+  <div class="number-box" *ngIf="! (id%2==0) || platform.width() < 1400">
+    <span>{{ dateFormatter(historicalEvent) }}</span>
+  </div>
+  <!--<h2><span class="small">Robotics</span> {{historicalEvent.language[0].title}}</h2><br>-->
+  <app-selection-buttons
+    [activeButtons]="cardButtons"
+    (activeTopicChange)="topicChange($event)">
+  </app-selection-buttons>
+
+  <div class="number-box" *ngIf="id%2==0  && !(platform.width() < 1400)">
+    <span>{{ dateFormatter(historicalEvent) }}</span>
+  </div>
+</div>
+
+
+
+<div class="body">
+  <p>{{ xmlEvent.language[0].description }}</p>
+<!--  <h3>{{ getTopicReadable(selectedTopic) }}</h3>-->
+  <div *ngFor="let paragraph of xmlEvent.language[0][selectedTopicXml][0].paragraph">
+    <span class="timeline__paragraph--title">{{paragraph.paragraph_title}}</span>
+    <div>{{paragraph.paragraph_content}}
+      <br>
+      <ul>
+        <li *ngIf="xmlEvent.language[0][selectedTopicXml][0].reference !== ''">
+          <a
+             [routerLink]="['/dictionary/dictionary-'+xmlEvent.language[0][selectedTopicXml][0].reference]">
+            See in dictionary
+          </a>
+        </li>
+        <li *ngIf="xmlEvent.language[0][selectedTopicXml][0].resourceRef !== ''">
+          <a
+             [routerLink]="['/resources/resource-'+xmlEvent.language[0][selectedTopicXml][0].resourceRef]">
+            See in resources
+          </a>
+        </li>
+      </ul>
+    </div>
+    <img class="media" [src]="paragraph.media" *ngIf="paragraph.media != ''" [alt]="paragraph.mediaCredit">
+    <div class="caption">{{paragraph.caption}}</div>
+  </div>
+</div>

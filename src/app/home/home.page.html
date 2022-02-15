@@ -1,0 +1,44 @@
+<ion-header *ngIf="platform.is('mobile')">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section>
+    <app-banner-heading></app-banner-heading>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="8" offset-md="2">
+          <ion-card>
+            <ion-card-content>
+              <!-- <p id="home-description"> -->
+              <p>
+                In the last years, vision-based systems have flourished at an unprecedented pace, fuelled by developments in hardware components (higher resolution and higher sensitivity imaging sensors, smaller and smarter micro controllers, just to name a few), as well as in software or processing techniques, with AI (Artificial Intelligence) leading to a landmark revolution. Several disciplines have fostered and benefited from these advances, but, unfortunately, not always in a coordinated and cooperative way.
+                When it comes to image-based sensing techniques, photogrammetry, computer vision and robotics have many contact points and overlapping areas. Yet, as for people of different cultures and languages, communicating among the three different communities can be very harsh and disorienting - especially for beginners and non-specialists.
+                Driven by a strong educational and inclusive ambition, the LightCam project will act as an interpreter to ease the dialog among these three actors. Two intermediation tools will be developed to serve this aim: (i) a dictionary of concepts, terminology and algorithms, in the form of a knowledge base website, and (ii) a code repository, where pieces of code for the conversion between different formulations implemented in available software solutions will be shared.
+              </p>
+              <p>
+                Lightcam is funded by the <a href="https://www.isprs.org/society/ecbi/default.aspx" target="_blank">ISPRS Education and Capacity Building Initiatives</a> 2020 (ECB).
+                <br>
+                The <a href="https://www.isprs.org/default.aspx" target="_blank">International Society for Photogrammetry and Remote Sensing</a> (ISPRS) has introduced ECB initiatives in 2017. The aim of the funding program is to consolidate the Society’s international position in education training and networking in the domains relevant to the Society, i.e. of photogrammetry, remote sensing and spatial information sciences. The funded projects are expected to focus on topics such as: education and learning programs, teaching and training materials and resources, e-learning techniques and platforms and online databases. As the ultimate outcome, the supported initiatives should enhance the visibility of the ISPRS, broadly promote its mission, widen its public and network of collaborations.
+              </p>
+              <!-- <p class="sponsor__container">
+                <ion-img class="logo__sponsor" alt="ISPRS logo" src="assets/imgs/sponsors/isprs_logo.png"> </ion-img>
+                <br *ngIf="platform.width() <= 490">
+                <ion-img class="logo__sponsor" alt="AMU logo" src="assets/imgs/sponsors/Aix-Marseille_University_(Logo).png"></ion-img>
+                <ion-img class="logo__sponsor" alt="FBK logo" src="assets/imgs/sponsors/fbk_logo.jpg"></ion-img> -->
+<!--                <ion-img class="logo__sponsor" alt="DLR logo" src="assets/imgs/sponsors/DLR_Logo.png"> </ion-img>-->
+              <!-- </p> -->
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+
+  <app-banner-footer></app-banner-footer>
+
+</ion-content>

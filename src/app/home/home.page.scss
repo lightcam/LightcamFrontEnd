@@ -1,0 +1,64 @@
+ion-img #header{
+  height: 30vh;
+  width: 100%;
+  overflow-y: hidden;
+  object-fit: cover ;
+}
+
+.card-title{
+  font-size: 1.3rem;
+  margin-bottom: -10px;
+}
+
+.card-subtitle{
+  padding-top: 10px;
+}
+
+ion-card{
+  p{
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+.centered{
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.home__title{
+  margin-top: 15px;
+  font-size: 1.8rem;
+  padding: 20px;
+}
+
+ion-card-content{
+  text-align: justify;
+  font-size: 1.5rem;
+}
+
+.sponsor__container{
+  text-align: center;
+  vertical-align: center;
+}
+
+.logo__sponsor{
+  display: inline-block;
+  width: 20%;
+  margin: 10px;
+  background-color: white;
+  top: 50%;
+}
+
+section{
+  background-image: var(--background-gradient);
+}
+
+.banner {
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+}
+
+#home-description{
+  font-size: 1.2rem;
+  padding-top: 20px;
+}

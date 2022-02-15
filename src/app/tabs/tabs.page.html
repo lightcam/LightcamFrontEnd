@@ -1,0 +1,95 @@
+<ion-content>
+
+  <ion-tabs *ngIf="platform.is('mobile')">
+
+    <ion-tab-bar slot="bottom" color="light">
+
+      <ion-tab-button tab="home">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+<!--      <ion-tab-button tab="commonGround">-->
+<!--        <ion-icon name="home-outline"></ion-icon>-->
+<!--        <ion-label>A Common Ground</ion-label>-->
+<!--      </ion-tab-button>-->
+
+      <ion-tab-button tab="timeline">
+        <ion-icon name="time-outline"></ion-icon>
+        <ion-label>Timeline</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="workflow">
+        <ion-icon name="git-network-outline"></ion-icon>
+        <ion-label>Workflow</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="dictionary">
+        <ion-icon name="book-outline"></ion-icon>
+        <ion-label>Dictionary</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="resources">
+        <ion-icon name="globe-outline"></ion-icon>
+        <ion-label>Resources</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+
+  </ion-tabs>
+
+  <ion-fab *ngIf="platform.is('mobile')" vertical="bottom" horizontal="end" slot="fixed" class="ion-margin"
+    [ngClass]="{'fab-mobile': platform.is('mobile')}">
+    <ion-fab-button routerLink="/about">
+      <ion-icon name="information-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-router-outlet *ngIf="!platform.is('mobile')"></ion-router-outlet>
+
+</ion-content>
+
+<ion-header *ngIf="!platform.is('mobile')">
+
+  <ion-toolbar color="primary" class="menu-toolbar ion-margin-bottom">
+    <ion-img id="header__logo" src="assets/imgs/sponsors/isprs_logo.png" slot="start"></ion-img>
+
+
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/home" routerLinkActive="active-tab" routerDirection="root">
+        <ion-icon name="home-outline" slot="start"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-button>
+<!--      <ion-button routerLink="/common-ground" routerLinkActive="active-tab" routerDirection="root">-->
+<!--        <ion-icon name="clipboard-outline" slot="start"></ion-icon>-->
+<!--        <ion-label>Common Ground</ion-label>-->
+<!--      </ion-button>-->
+      <ion-button routerLink="/timeline" routerLinkActive="active-tab" routerDirection="root">
+        <ion-icon name="time-outline" slot="start"></ion-icon>
+        <ion-label>Timeline</ion-label>
+      </ion-button>
+      <ion-button routerLink="/workflow" routerLinkActive="active-tab" routerDirection="root">
+        <ion-icon name="git-network-outline" slot="start"></ion-icon>
+        <ion-label>Workflow</ion-label>
+      </ion-button>
+      <ion-button routerLink="/dictionary" routerLinkActive="active-tab" routerDirection="root">
+        <ion-icon name="book-outline" slot="start"></ion-icon>
+        <ion-label>Dictionary</ion-label>
+      </ion-button>
+      <ion-button routerLink="/resources" routerLinkActive="active-tab" routerDirection="root">
+        <ion-icon name="globe-outline" slot="start"></ion-icon>
+        <ion-label>Resources</ion-label>
+      </ion-button>
+      <ion-button routerLink="/about" routerLinkActive="active-tab" routerDirection="root">
+        <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+        <ion-label>About</ion-label>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+
+

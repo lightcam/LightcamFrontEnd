@@ -1,0 +1,38 @@
+<ion-grid>
+  <ion-row>
+
+    <ion-col size="4">
+      <div class="ion-activatable" style="background-color: var(--photogrammetry-color);"
+        *ngIf="activeButtons && activeButtons.includes(Topics.Photogrammetry) && activeButtons.length > 0"
+        (click)="onBtnClick(Topics.Photogrammetry);"
+        [ngClass]="{'btn_active': activeTopic == Topics.Photogrammetry}">
+        <ion-ripple-effect></ion-ripple-effect>
+      <!--  <ion-icon name="camera"></ion-icon>-->
+        <img class="button-icon" src="assets/icon/iconPhotogrammetry.png">
+      </div>
+    </ion-col>
+
+    <ion-col size="4">
+      <div class="ion-activatable" style="background-color: var(--computervision-color);"
+        *ngIf="activeButtons && activeButtons.includes(Topics.ComputerVision) && activeButtons.length > 0"
+        (click)="onBtnClick(Topics.ComputerVision);"
+        [ngClass]="{'btn_active': activeTopic == Topics.ComputerVision}">
+        <ion-ripple-effect></ion-ripple-effect>
+      <!--  <ion-icon name="laptop-outline"></ion-icon>-->
+        <img class="button-icon" src="assets/icon/iconCV.png">
+      </div>
+    </ion-col>
+
+    <ion-col size="4">
+      <div class="ion-activatable" style="background-color: var(--robotics-color);"
+        *ngIf="activeButtons && activeButtons.includes(Topics.Robotics) && activeButtons.length > 0"
+        (click)="onBtnClick(Topics.Robotics);"
+        [ngClass]="{'btn_active': activeTopic == Topics.Robotics}">
+        <ion-ripple-effect></ion-ripple-effect>
+      <!--  <ion-icon name="cog-outline"></ion-icon>-->
+        <img class="button-icon" src="assets/icon/iconRobotics.png">
+      </div>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>

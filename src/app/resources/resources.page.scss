@@ -1,0 +1,19 @@
+section{
+  background-image: var(--background-gradient);
+}
+
+.highlighted{
+  animation: highlight;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes highlight {
+  from{
+    transform: scale(1);
+  }to{
+    transform: scale(1.1);
+  }
+}

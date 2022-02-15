@@ -1,0 +1,99 @@
+<ion-header *ngIf="platform.is('mobile')">
+  <ion-toolbar>
+    <ion-title>Timeline</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section id=timeline>
+    <app-banner-heading></app-banner-heading>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="8" offset-md="2">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Historical developments</ion-card-title>
+              <div class="global__page--description--txt"> The timeline contains the key events that led to the developments of the three disciplines. From the principles of perspective to the development of dark cameras, from the birth of photography and photogrammetry to the first digital image and the development of the first slam for Mars exploration, all these events are organised in chronological order and in a way that shows the overlap and parallelism between the three disciplines.
+                Once a date is selected, switch between disciplines by clicking on the corresponding icon.</div>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- <p class="leader timeline__leader">
+                <ion-button (click)="changeTopicsEvent2($event, 0)" [fill]="this.selectedTopics[0] ? 'solid' : 'outline'" color="photogrammetry"><ion-label>Photogrammetry</ion-label></ion-button>
+                <ion-button (click)="changeTopicsEvent2($event, 1)" [fill]="this.selectedTopics[1] ? 'solid' : 'outline'" color="computervision"><ion-label>Computer Vision</ion-label></ion-button>
+                <ion-button (click)="changeTopicsEvent2($event, 2)" [fill]="this.selectedTopics[2] ? 'solid' : 'outline'" color="robotics"><ion-label>Robotics</ion-label></ion-button>
+              </p> -->
+              <p class="leader">
+                <ion-list class="topic-selector">
+                  <ion-item>
+                    <ion-label style="color: var(--photogrammetry-color);">Photogrammetry</ion-label>
+                    <ion-toggle (ionChange)="changeTopicsEvent($event, 0)" slot="end" checked style="--background-checked: var(--photogrammetry-color);"></ion-toggle>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label style="color: var(--computervision-color);">Computer Vision</ion-label>
+                    <ion-toggle (ionChange)="changeTopicsEvent($event, 1)" slot="end" checked style="--background-checked: var(--computervision-color);"></ion-toggle>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label style="color: var(--robotics-color);">Robotics</ion-label>
+                    <ion-toggle (ionChange)="changeTopicsEvent($event, 2)" slot="end" checked style="--background-checked: var(--robotics-color);"></ion-toggle>
+                  </ion-item>
+                </ion-list>
+              </p>
+            </ion-card-content>
+          </ion-card>
+
+
+<!--    <ion-card class="content-loader" *ngIf="xmlEvents === undefined">-->
+<!--      <ion-card-header>-->
+<!--        <ion-card-title>Please upload a dtd/xml file</ion-card-title>-->
+<!--        <ion-card-subtitle><a (click)="getXmlContent()">or continue with the default one</a></ion-card-subtitle>-->
+<!--      </ion-card-header>-->
+<!--      <hr>-->
+<!--      <input id="file-upload" name="file" type="file" (change)="loadFile($event)" accept=".xml">-->
+<!--      <label class="input-file" for="file-upload">Upload file...</label>-->
+<!--    </ion-card>-->
+    <!-- <div class="demo-card-wrapper" [ngStyle]="{'height': this.containerHeight + 'px'}"> -->
+    <div class="demo-card-wrapper" *ngIf="xmlEventsFiltered != null">
+
+      <!--
+      <app-event-card
+        *ngFor="let xmlEvent of xmlEvents; let i = index"
+        [appTimelineElement]="i % 2 == 0 ? i/2 + 1 : (i-1)/2 + 1 + Math.ceil(xmlEvents.length / 2)"
+        [id]="i"
+        [xmlEvent]="xmlEvent"
+        [platform]="platform"
+      ></app-event-card>-->
+        <!--
+        (height)="setCardHeight(i, $event)"
+        [ngStyle]="{'top': this.cardsPosition[i] + 'px'}"
+      ></app-event-card> -->
+
+      <div class="cards-pair-container" *ngFor="let item of counter(Math.ceil(xmlEventsFiltered.length / 2)); let i = index">
+        <app-event-card
+          style="float: left;"
+          [id]="i"
+          [xmlEvent]="xmlEventsFiltered[2*i]"
+          [platform]="platform"
+        ></app-event-card>
+        <app-event-card
+          class="right"
+          style="float: right;"
+          *ngIf="(2*i + 1) < xmlEventsFiltered.length"
+          [id]="i"
+          [xmlEvent]="xmlEventsFiltered[2*i + 1]"
+          [platform]="platform"
+        ></app-event-card>
+      </div>
+
+        <!-- <div class="demo-card" [ngClass]="['demo-card--step1']" *ngFor="let historicalEvent of xmlEvents; let i = index" [appTimelineElement]="i % 2 == 0 ? i/2 + 1 : (i-1)/2 + 1 + Math.ceil(xmlEvents.length / 2)"> -->
+
+    </div>
+
+  </ion-col>
+</ion-row>
+</ion-grid>
+
+  </section>
+
+  <app-banner-footer></app-banner-footer>
+
+</ion-content>
